@@ -44,7 +44,6 @@ EXACT_FQDNS=(
   "fonts.googleapis.com"
   "firebaseremoteconfig.googleapis.com"
   "storage.googleapis.com"
-  "googletagmanager.com"
   "google.qualtrics.com"
   "epsilon.6sense.com"
   "hpe.com"
@@ -110,6 +109,7 @@ WILDCARD_ZONES=(
   "clients6.google.com"
   "cloud.google.com"
   "tagmanager.google.com"
+  "googletagmanager.com"
   "kaggle.com"
 )
 

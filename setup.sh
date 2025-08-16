@@ -113,6 +113,7 @@ WILDCARD_ZONES=(
   "googletagmanager.com"
   "kaggle.com"
   "kaggle.io"
+  "kaggleusercontent.com"
   "docker.com"
 )
 

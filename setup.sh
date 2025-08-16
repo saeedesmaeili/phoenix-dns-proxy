@@ -115,6 +115,7 @@ WILDCARD_ZONES=(
   "kaggle.io"
   "kaggleusercontent.com"
   "docker.com"
+  "appspot.com"
 )
 
 # If you prefer to whitelist only the previous exact hostnames, empty WILDCARD_ZONES

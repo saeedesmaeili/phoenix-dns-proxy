@@ -5,7 +5,7 @@
 # - sniproxy passes HTTP/TLS to real destinations by Host/SNI for those whitelisted names.
 
 set -Eeuo pipefail
-: "${DEBUG:=1}"
+: "${DEBUG:=0}"
 if [[ "$DEBUG" == "1" ]]; then
   export PS4='+ [${BASH_SOURCE##*/}:${LINENO}] '
   set -x
@@ -129,8 +129,8 @@ echo "Detected server IP: ${PRIMARY_IP}"
 free_port_53() {
   echo "[pre] Freeing port 53 from any previous Docker bindings..."
   if command -v docker >/dev/null 2>&1; then
-    if [[ -f /opt/dns-tproxy/docker-compose.yml ]]; then
-      (cd /opt/dns-tproxy && sudo docker compose down --remove-orphans || true)
+    if [[ -f /opt/phoenix-dns-proxy/docker-compose.yml ]]; then
+      (cd /opt/phoenix-dns-proxy && sudo docker compose down --remove-orphans || true)
     fi
     mapfile -t CIDS < <(sudo docker ps --format '{{.ID}} {{.Ports}}' | grep -E '(:53->|0\.0\.0\.0:53|:::53)' || true)
     if (( ${#CIDS[@]} )); then
@@ -204,11 +204,11 @@ sudo sysctl --system >/dev/null
 # 3) Write configs
 ###############################################################################
 echo "[3/8] Writing files..."
-sudo mkdir -p /opt/dns-tproxy/{coredns,sniproxy,logs}
-sudo mkdir -p /opt/dns-tproxy/logs/sniproxy
+sudo mkdir -p /opt/phoenix-dns-proxy/{coredns,sniproxy,logs}
+sudo mkdir -p /opt/phoenix-dns-proxy/logs/sniproxy
 
 # docker-compose.yml — CoreDNS + sniproxy on a custom bridge (MTU 1450)
-sudo tee /opt/dns-tproxy/docker-compose.yml >/dev/null <<'EOF'
+sudo tee /opt/phoenix-dns-proxy/docker-compose.yml >/dev/null <<'EOF'
 services:
   coredns:
     image: coredns/coredns:1.11.1
@@ -245,7 +245,7 @@ EOF
 
 # CoreDNS Corefile: hijack exact & wildcard; else forward upstream
 UP1="1.1.1.1"; UP2="8.8.8.8"
-CORE_FILE="/opt/dns-tproxy/coredns/Corefile"
+CORE_FILE="/opt/phoenix-dns-proxy/coredns/Corefile"
 sudo bash -c "cat > '${CORE_FILE}'" <<EOF
 .:53 {
   log
@@ -298,7 +298,7 @@ EOF
 # CoreDNS template/fallthrough behavior and forward plugin per docs. (coredns.io)  # refs: template/forward
 
 # sniproxy.conf — resolver ipv4_only + regex tables
-SNIPROXY_CONF="/opt/dns-tproxy/sniproxy/sniproxy.conf"
+SNIPROXY_CONF="/opt/phoenix-dns-proxy/sniproxy/sniproxy.conf"
 sudo tee "${SNIPROXY_CONF}" >/dev/null <<'EOF'
 user daemon
 pidfile /var/run/sniproxy.pid
@@ -378,7 +378,7 @@ sudo docker pull tommylau/sniproxy:latest
 # 5) Start stack
 ###############################################################################
 echo "[5/8] Starting containers..."
-cd /opt/dns-tproxy
+cd /opt/phoenix-dns-proxy
 sudo docker compose up -d
 
 sleep 1

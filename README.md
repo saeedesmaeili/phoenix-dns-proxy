@@ -1,3 +1,7 @@
+<center>
+<img src="docs/images/logo.png" alt="Phoenix Logo" height="200">
+</center>
+
 # DNS Transparent Proxy with Whitelist
 
 This project provides a **transparent DNS + TCP proxy** setup on **Ubuntu** that:

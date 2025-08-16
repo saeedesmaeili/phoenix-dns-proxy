@@ -112,6 +112,7 @@ WILDCARD_ZONES=(
   "tagmanager.google.com"
   "googletagmanager.com"
   "kaggle.com"
+  "docker.com"
 )
 
 # If you prefer to whitelist only the previous exact hostnames, empty WILDCARD_ZONES

@@ -101,6 +101,7 @@ EXACT_FQDNS=(
   "ssc.vmware.com"
   "vsphereclient.vmware.com"
   "ws.zoominfo.com"
+  "dockerstatic.com"
 )
 
 # Wildcards for your Minecraft auth stack (covers previous specific hosts):

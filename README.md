@@ -1,6 +1,6 @@
-<center>
+<p align="center">
 <img src="docs/images/logo.png" alt="Phoenix Logo" height="200">
-</center>
+</p>
 
 # DNS Transparent Proxy with Whitelist
 

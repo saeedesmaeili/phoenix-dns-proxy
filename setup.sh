@@ -25,8 +25,6 @@ EXACT_FQDNS=(
   "api.cisco.com"
   "download-ssc.cisco.com"
   "software.cisco.com"
-  "cloud.google.com"
-  "console.cloud.google.com"
   "developers.google.com"
   "aistudio.google.com"
   "checks.google.com"
@@ -110,6 +108,7 @@ EXACT_FQDNS=(
 WILDCARD_ZONES=(
   "download.nvidia.com"
   "clients6.google.com"
+  "cloud.google.com"
 )
 
 # If you prefer to whitelist only the previous exact hostnames, empty WILDCARD_ZONES

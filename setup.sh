@@ -109,6 +109,7 @@ WILDCARD_ZONES=(
   "download.nvidia.com"
   "clients6.google.com"
   "cloud.google.com"
+  "tagmanager.google.com"
 )
 
 # If you prefer to whitelist only the previous exact hostnames, empty WILDCARD_ZONES

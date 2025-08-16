@@ -109,6 +109,7 @@ EXACT_FQDNS=(
 # Wildcards for your Minecraft auth stack (covers previous specific hosts):
 WILDCARD_ZONES=(
   "download.nvidia.com"
+  "clients6.google.com"
 )
 
 # If you prefer to whitelist only the previous exact hostnames, empty WILDCARD_ZONES

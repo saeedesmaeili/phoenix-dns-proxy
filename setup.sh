@@ -110,6 +110,7 @@ WILDCARD_ZONES=(
   "clients6.google.com"
   "cloud.google.com"
   "tagmanager.google.com"
+  "kaggle.com"
 )
 
 # If you prefer to whitelist only the previous exact hostnames, empty WILDCARD_ZONES

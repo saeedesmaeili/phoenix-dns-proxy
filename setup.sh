@@ -18,35 +18,32 @@ trap 'rc=$?; echo "!! setup.sh failed at line $LINENO: $(sed -n ${LINENO}p "$0")
 # WILDCARD_ZONES -> *.zone is hijacked (we also include the apex of the zone)
 ###############################################################################
 EXACT_FQDNS=(
+  "whatismyipaddress.com"
   "developers.google.com"
   "aistudio.google.com"
   "checks.google.com"
   "makersuite.google.com"
   "play.google.com"
   "privacysandbox.google.com"
-  "firebaseextensions.clients6.google.com"
-  "ads.google.com"
   "analytics.google.com"
   "developer.chrome.com"
   "login.live.com"
   "login.microsoftonline.com"
-  "pub.dev"
-  "slack.com"
   "account.mojang.com"
   "authserver.mojang.com"
   "sessionserver.mojang.com"
   "skins.minecraft.net"
   "textures.minecraft.net"
   "api.minecraftservices.com"
-  "auth.xboxlive.com"
-  "user.auth.xboxlive.com"
-  "xsts.auth.xboxlive.com"
   "apt.kubernetes.io"
-  "whatismyipaddress.com"
 )
 
 # Wildcards for your Minecraft auth stack (covers previous specific hosts):
 WILDCARD_ZONES=(
+  "auth.xboxlive.com"
+  "adobe.com"
+  "pub.dev"
+  "slack.com"
   "sfdcdigital.com"
   "salesforce.com"
   "firebase.google.com"
@@ -83,6 +80,7 @@ WILDCARD_ZONES=(
   "android.com"
   "lenovo.com"
   "intel.com"
+  "scene7.com"
   "hpe.com"
   "linuxhostsupport.com"
   "qualtrics.com"

@@ -51,7 +51,7 @@ WILDCARD_ZONES=(
   "grafana.com"
   "bard.google.com"
   "spiceworks.com"
-  "ebaystatic.co"
+  "ebaystatic.com"
   "ebayimg.com"
   "ebaycdn.net"
   "solarwinds.com"

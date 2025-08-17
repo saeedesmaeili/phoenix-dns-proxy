@@ -41,6 +41,7 @@ EXACT_FQDNS=(
 
 # Wildcards for your Minecraft auth stack (covers previous specific hosts):
 WILDCARD_ZONES=(
+  "ea.com"
   "kinsta.com"
   "gitlab.com"
   "grafana.com"

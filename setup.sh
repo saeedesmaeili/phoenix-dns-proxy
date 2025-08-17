@@ -47,6 +47,7 @@ EXACT_FQDNS=(
 
 # Wildcards for your Minecraft auth stack (covers previous specific hosts):
 WILDCARD_ZONES=(
+  "sfdcdigital.com"
   "salesforce.com"
   "firebase.google.com"
   "amplitude.com"

@@ -37,10 +37,14 @@ EXACT_FQDNS=(
   "textures.minecraft.net"
   "api.minecraftservices.com"
   "apt.kubernetes.io"
+  "cdn-dynmedia-1.microsoft.com"
 )
 
 # Wildcards for your Minecraft auth stack (covers previous specific hosts):
 WILDCARD_ZONES=(
+  "okta.com"
+  "signup.azure.com"
+  "azure.microsoft.com"
   "ea.com"
   "kinsta.com"
   "gitlab.com"

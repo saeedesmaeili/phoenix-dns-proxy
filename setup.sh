@@ -42,6 +42,10 @@ EXACT_FQDNS=(
 
 # Wildcards for your Minecraft auth stack (covers previous specific hosts):
 WILDCARD_ZONES=(
+  "coursera.org"
+  "spotify.com"
+  "trello.com"
+  "epicgames.com"
   "okta.com"
   "signup.azure.com"
   "azure.microsoft.com"
